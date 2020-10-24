@@ -19,7 +19,7 @@ async def on_ready():
 @client.event
 async def on_member_join(member: discord.Member):
     channel = await member.create_dm()
-    await channel.send("Welcome to our server")
+    await channel.send("Welcome to our server!")
 
 ### Member leaving ###
 @client.event
@@ -31,14 +31,14 @@ async def on_member_remove(member: discord.Member):
 ### Latency ###
 @client.command()
 async def ping(ctx):
-    await ctx.send(f"Currently pinging at {round(client.latency*1000)}ms")
+    await ctx.send(f"Currently pinging at {round(client.latency*1000)}ms!")
 
 ### Deleting ###
 @client.command()
 @commands.has_role("👑")
 async def delete(ctx, amount=1):
     if amount==1:
-        await ctx.send(f'{ctx.author.mention} Please define range of deletion after command.\nExample: "!delete 5"')
+        await ctx.send(f'{ctx.author.mention} Please define range of deletion after command.\nExample: "\delete 5!"')
     else:
         await ctx.channel.purge(limit=amount+1)
 
@@ -47,14 +47,14 @@ async def delete(ctx, amount=1):
 @commands.has_role("👑")
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
-    await ctx.channel.send(f"{member.mention} has been kicked.")
+    await ctx.channel.send(f"{member.mention} has been kicked!")
 
 ### Banning ###
 @client.command()
 @commands.has_role("👑")
 async def ban(ctx, member : discord.Member, *, reason=None):
     await member.ban(reason=reason)
-    await ctx.channel.send(f"{member.mention} has been banned.")
+    await ctx.channel.send(f"{member.mention} has been banned!")
 
 ### Unbanning ###
 @client.command()
@@ -67,7 +67,7 @@ async def unban(ctx, *, member):
         user = ban_entry.user
         if (user.name, user.discriminator) == (member_name, member_discriminator):
             await ctx.guild.unban(user)
-            await ctx.send(f"{user.mention} has been unbanned.")
+            await ctx.send(f"{user.mention} has been unbanned!")
             return
 
 ### Exception handling ###
@@ -109,10 +109,12 @@ async def avatar(ctx, member: discord.Member):
 ### Random truth ###
 @client.command()
 async def truth(ctx, *, question):
-    responses = ["Yes.",
-                 "No.",
-                 "Definitely.",
-                 "Absolutely.",
+    responses = ["Yes!",
+                 "No!",
+                 "That's fucking true!",
+                 "You're God damn right!",
+                 "No...That's not true!",
+                 "That's impossible!",
                  "Maybe."]
     await ctx.send(f"{ctx.author.mention} {random.choice(responses)}")
 
@@ -120,10 +122,24 @@ async def truth(ctx, *, question):
 @client.command()
 async def slang(ctx, member: discord.Member):
     await ctx.channel.purge(limit=1)
-    responses = ["Tor maire chudi.",
-                 "Tor kane muita sing mach charum.",
-                 "Tor maire bap.",
-                 "Tor hogay amar shona.",]
+    responses = ["Tor maire chudi!",
+                 "Tor kane muita sing mach charum!",
+                 "Tor maire bap!",
+                 "Tui gay!",
+                 "Biatch!",
+                 "Piss off!",
+                 "You are a Dick head!",
+                 "Son of a gun!",
+                 "You son of a gun!",
+                 "You son of a motherless goat!",
+                 "You son of a mother trucker!",
+                 "You Mothersmucker!",
+                 "Poo on a stick!",
+                 "Son of a biscuit!",
+                 "Go lick a duck!",
+                 "What the frog!",
+                 "Yuck fou!",
+                 "Tor hogay amar shona!",]
     await ctx.send(f"{member.mention} {random.choice(responses)}")
 
     
