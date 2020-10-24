@@ -58,7 +58,7 @@ async def ban(ctx, member : discord.Member, *, reason=None):
 
 ### Unbanning ###
 @client.command()
-@commands.has_role(".")
+@commands.has_role("👑")
 async def unban(ctx, *, member):
     banned_list = await ctx.guild.bans()
     member_name, member_discriminator = member.split("#")
