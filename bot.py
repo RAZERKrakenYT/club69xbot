@@ -129,6 +129,7 @@ async def slang(ctx, member: discord.Member):
                  "Son of a gun!",
                  "You son of a gun!",
                  "You son of a motherless goat!",
+                 ":DisappoinedMan:",
                  "You son of a mother trucker!",
                  "You Mothersmucker!",
                  "Poo on a stick!",
