@@ -122,10 +122,7 @@ async def truth(ctx, *, question):
 @client.command()
 async def slang(ctx, member: discord.Member):
     await ctx.channel.purge(limit=1)
-    responses = ["Tor maire chudi!",
-                 "Tor kane muita sing mach charum!",
-                 "Tor maire bap!",
-                 "Tui gay!",
+    responses = ["Tui gay!",
                  "Biatch!",
                  "Piss off!",
                  "You are a Dick head!",
