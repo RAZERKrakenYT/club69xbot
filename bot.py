@@ -24,7 +24,7 @@ async def on_member_join(member: discord.Member):
 ### Member leaving ###
 @client.event
 async def on_member_remove(member: discord.Member):
-    print(f"{member} has left this server.")
+    print(f"{member} has left this server!")
     channel = await member.create_dm()
     await channel.send("Sorry to see you go :frowning2:")
 
