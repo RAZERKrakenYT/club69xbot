@@ -11,7 +11,7 @@ client = commands.Bot(command_prefix = "\\")
 ### Bot booting ###
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Playing(name="69x Gangbang on Brazzers !!!", url="https://www.twitch.tv/razerkrakenyt"))
+    await client.change_presence(activity=discord.Streaming(name="69x Gangbang | Brazzers !!!", url="https://www.twitch.tv/razerkrakenyt"))
     # await client.user.edit(username="Deathstalkers™")
     print("I am on service sir !")
 
