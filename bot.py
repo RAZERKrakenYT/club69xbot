@@ -6,13 +6,13 @@ import os
 import asyncio
 import random
 
-client = commands.Bot(command_prefix = "\\")
+client = commands.Bot(command_prefix = "=")
 
 ### Bot booting ###
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Streaming(name="69x™ Gangbang | Brazzers !!!", url="https://www.twitch.tv/razerkrakenyt"))
-    # await client.user.edit(username="Deathstalkers™")
+    await client.change_presence(activity=discord.Streaming(name="VALORANT | R Λ Z Ξ R !!!", url="https://www.facebook.com/gaming/razerizzzmahname"))
+    # await client.user.edit(username="CLUB 69x™")
     print("I am on service sir !")
 
 ### Member joining ###
