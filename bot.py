@@ -109,9 +109,7 @@ async def avatar(ctx, member: discord.Member):
 ### Random truth ###
 @client.command()
 async def truth(ctx, *, question):
-    responses = ["Yes!",
-                 "No!",
-                 "That's fucking true!",
+    responses = ["That's fucking true!",
                  "You're God damn right!",
                  "No...That's not true!",
                  "That's impossible!",
