@@ -1,7 +1,7 @@
 module.exports = {
     app: {
         px: '=',
-        token: 'OTU1ODUyMTM0Mjc0OTU3Mzgy.Yjnsqw.yWnhhbNzM5GpzhkptC-nXsG0wVE',
+        token: '133e35147aea315dc50d047f89ba44eaeb6b47a628f92274b7265573aa1b4637',
         playing: 'By CLOUDEX™'
     },
 
