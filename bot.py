@@ -137,6 +137,16 @@ async def slang(ctx, member: discord.Member):
                  "Yuck fou!",
                  "Tor hogay amar shona!",]
     await ctx.send(f"{member.mention} {random.choice(responses)}")
+    
+    ### Bot joining a voice channel ###
+@client.command()
+async def join(ctx):
+    channel = ctx.message.author.voice.channel
+    voice = get(client.voice_clients, guild=ctx.guild)
+    if voice and voice.is_connected():
+        await voice.move_to(channel)
+    else:
+        voice = await channel.connect()
 
     
 ###### Music ######
@@ -190,12 +200,6 @@ async def stop(ctx):
         voice.stop()
         await ctx.send('Stopping...')
 
-
-### Bot joining a voice channel ###
-@client.command()
-async def join(ctx):
-    channel = ctx.author.voice.channel
-    await channel.connect()
 
 ### Bot leaving a voice channel ###
 @client.command()
