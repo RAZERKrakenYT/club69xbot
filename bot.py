@@ -142,16 +142,6 @@ async def slang(ctx, member: discord.Member):
 ###### Music ######
 @client.command()
 async def play(ctx, member: discord.Member):
-import asyncio
-import functools
-import itertools
-import math
-import random
-
-import discord
-import youtube_dl
-from async_timeout import timeout
-from discord.ext import commands
 
 
 class VoiceError(Exception):
