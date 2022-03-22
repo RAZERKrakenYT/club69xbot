@@ -142,6 +142,8 @@ async def slang(ctx, member: discord.Member):
 ###### Music ######
 @client.command()
 async def play(ctx, member: discord.Member):
+    channel = ctx.author.voice.channel
+    await channel.connect()
 
 
 class VoiceError(Exception):
