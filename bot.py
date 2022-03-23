@@ -5,15 +5,7 @@ import shutil
 import os
 import asyncio
 import random
-# load our local env so we dont have the token in public
-from dotenv import load_dotenv
-from discord.ext import commands
-from discord.utils import get
-from discord import FFmpegPCMAudio
-from discord import TextChannel
-from youtube_dl import YoutubeDL
 
-load_dotenv()
 
 client = commands.Bot(command_prefix = "=")
 
