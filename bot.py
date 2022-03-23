@@ -21,13 +21,6 @@ async def on_member_join(member: discord.Member):
     channel = await member.create_dm()
     await channel.send("Welcome to our CLOUDEX™ server!"
     
-### Member leaving ###
-@client.event
-async def on_member_remove(member: discord.Member):
-    print(f"{member} has left this server!")
-    channel = await member.create_dm()
-    await channel.send("Sorry to see you go :frowning2:")
-
 ### Latency ###
 @client.command()
 async def ping(ctx):
