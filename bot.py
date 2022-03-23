@@ -78,7 +78,6 @@ async def on_command_error(ctx, error):
 
 ### Echoing ###
 @client.command()
-@commands.has_role("CLOUDEX™")
 async def echo(ctx):
     await ctx.channel.purge(limit=1)
     msg = ctx.message.content.split()
