@@ -5,7 +5,6 @@ import shutil
 import os
 import asyncio
 import random
-import DiscordUtils
 
 
 client = commands.Bot(command_prefix = "=")
