@@ -19,19 +19,26 @@ async def on_ready():
 @client.event
 async def on_member_join(member: discord.Member):
     channel = await member.create_dm()
-    await channel.send("Welcome to our CLOUDEX™ server!"
-                       
+    await channel.send("Welcome to our server")
+
+### Member leaving ###
+@client.event
+async def on_member_remove(member: discord.Member):
+    print(f"{member} has left this server.")
+    channel = await member.create_dm()
+    await channel.send("Sorry to see you go :frowning2:")
+
 ### Latency ###
 @client.command()
 async def ping(ctx):
-    await ctx.send(f"Currently pinging at {round(client.latency*1000)}ms!")
-                       
+    await ctx.send(f"Currently pinging at {round(client.latency*1000)}ms")
+
 ### Deleting ###
 @client.command()
 @commands.has_role(".")
 async def delete(ctx, amount=1):
     if amount==1:
-        await ctx.send(f'{ctx.author.mention} Please define range of deletion after command.\nExample: "=delete 5"')
+        await ctx.send(f'{ctx.author.mention} Please define range of deletion after command.\nExample: "!delete 5"')
     else:
         await ctx.channel.purge(limit=amount+1)
 
@@ -40,15 +47,15 @@ async def delete(ctx, amount=1):
 @commands.has_role(".")
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
-    await ctx.channel.send(f"{member.mention} has been kicked!")
-                       
+    await ctx.channel.send(f"{member.mention} has been kicked.")
+
 ### Banning ###
 @client.command()
 @commands.has_role(".")
 async def ban(ctx, member : discord.Member, *, reason=None):
     await member.ban(reason=reason)
-    await ctx.channel.send(f"{member.mention} has been banned!")
-             
+    await ctx.channel.send(f"{member.mention} has been banned.")
+
 ### Unbanning ###
 @client.command()
 @commands.has_role(".")
@@ -60,7 +67,7 @@ async def unban(ctx, *, member):
         user = ban_entry.user
         if (user.name, user.discriminator) == (member_name, member_discriminator):
             await ctx.guild.unban(user)
-            await ctx.send(f"{user.mention} has been unbanned!")
+            await ctx.send(f"{user.mention} has been unbanned.")
             return
 
 ### Exception handling ###
