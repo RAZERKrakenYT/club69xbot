@@ -23,8 +23,8 @@ async def on_member_join(member: discord.Member):
     
 ### Autorole ###    
 @client.event
-async def on_member_join(member):
-    role = discord.utils.get(member.guild.roles, name='BD')
+async def online(ctx):
+    role = discord.utils.get(bot.get_guild(ctx.guild.id).roles, id ="607321650966560789")
     await member.add_roles(role)
     
 ### Member leaving ###
