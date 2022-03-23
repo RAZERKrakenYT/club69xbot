@@ -20,10 +20,10 @@ async def on_ready():
 @client.event
 async def on_member_join(member: discord.Member):
     channel = await member.create_dm()
-    await channel.send("Welcome to our server!")
+    await channel.send("Welcome to our CLOUDEX™ server!")
     
 ### Autorole ###    
-    @Client.event
+    @client.event
 async def on_member_join(member):
     intents = discord.Intents().all()
     client = commands.Bot(command_prefix = prefix, intents=intents)
