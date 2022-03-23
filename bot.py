@@ -5,6 +5,7 @@ import shutil
 import os
 import asyncio
 import random
+import DiscordUtils
 
 
 client = commands.Bot(command_prefix = "=")
@@ -23,10 +24,10 @@ async def on_member_join(member: discord.Member):
     await channel.send("Welcome to our CLOUDEX™ server!")
     
 ### Autorole ###    
-@client.event
+@bot.event
 async def on_member_join(member):
-    role = discord.utils.get(member.guild.roles, name='Community Member______________________________________')
-    await member.add_roles(role)
+    role = discord.utils.get(member.server.roles, id="607321650966560789")
+    await bot.add_roles(member, role)
 
 ### Member leaving ###
 @client.event
