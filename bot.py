@@ -22,11 +22,11 @@ async def on_member_join(member: discord.Member):
     await channel.send("Welcome to our CLOUDEX™ server!")
     
 ### Autorole ###    
-@bot.event
+@client.event
 async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, name="Community Member______________________________________")
-    await bot.add_roles(member, role)
-
+    role = discord.utils.get(member.guild.roles, name='BD')
+    await member.add_roles(role)
+    
 ### Member leaving ###
 @client.event
 async def on_member_remove(member: discord.Member):
