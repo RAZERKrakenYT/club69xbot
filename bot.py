@@ -151,7 +151,6 @@ async def join(ctx):
     
 ###### Music ######
 @client.command()
-@commands.has_role(".")
 async def play(ctx, url):
     YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist': 'True'}
     FFMPEG_OPTIONS = {
