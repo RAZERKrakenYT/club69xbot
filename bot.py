@@ -6,20 +6,20 @@ import os
 import asyncio
 import random
 
-client = commands.Bot(command_prefix = "\\")
+client = commands.Bot(command_prefix = "=")
 
 ### Bot booting ###
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Streaming(name="RAZERKrakenYT | #RazerStreamer!", url="https://www.twitch.tv/razerkrakenyt"))
-    # await client.user.edit(username="Deathstalkers™")
+    await client.change_presence(activity=discord.Streaming(name="RAZERKrakenYT | #RazerStreamer!", url="https://www.twitch.tv/razerezzzpzzzGG"))
+    # await client.user.edit(username="CLOUDEX™")
     print("I am on service sir !")
 
 ### Member joining ###
 @client.event
 async def on_member_join(member: discord.Member):
     channel = await member.create_dm()
-    await channel.send("Welcome to our server")
+    await channel.send("Welcome to CLOUDEX™ server")
 
 ### Member leaving ###
 @client.event
@@ -38,7 +38,7 @@ async def ping(ctx):
 @commands.has_role(".")
 async def delete(ctx, amount=1):
     if amount==1:
-        await ctx.send(f'{ctx.author.mention} Please define range of deletion after command.\nExample: "!delete 5"')
+        await ctx.send(f'{ctx.author.mention} Please define range of deletion after command.\nExample: "=delete 5"')
     else:
         await ctx.channel.purge(limit=amount+1)
 
@@ -120,10 +120,22 @@ async def truth(ctx, *, question):
 @client.command()
 async def slang(ctx, member: discord.Member):
     await ctx.channel.purge(limit=1)
-    responses = ["Tor maire chudi.",
-                 "Tor kane muita sing mach charum.",
-                 "Tor maire bap.",
-                 "Tor hogay amar shona.",]
+    responses = ["Tui gay!",
+                 "Biatch!",
+                 "Piss off!",
+                 "You are a Dick head!",
+                 "Son of a gun!",
+                 "You son of a gun!",
+                 "You son of a motherless goat!",
+                 ":DisappoinedMan:",
+                 "You son of a mother trucker!",
+                 "You Mothersmucker!",
+                 "Poo on a stick!",
+                 "Son of a biscuit!",
+                 "Go lick a duck!",
+                 "What the frog!",
+                 "Yuck fou!",
+                 "Tor hogay amar shona!",]
     await ctx.send(f"{member.mention} {random.choice(responses)}")
 
     
