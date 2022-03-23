@@ -19,13 +19,7 @@ async def on_ready():
 @client.event
 async def on_member_join(member: discord.Member):
     channel = await member.create_dm()
-    await channel.send("Welcome to our CLOUDEX™ server!")
-    
-### Autorole ###    
-@client.event
-async def on_member_join(member): 
-  role = discord.utils.get(member.guild.roles, name="BD")
-  await member.add_roles(role)
+    await channel.send("Welcome to our CLOUDEX™ server!"
     
 ### Member leaving ###
 @client.event
