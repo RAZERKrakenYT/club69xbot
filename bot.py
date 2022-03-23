@@ -6,7 +6,6 @@ import os
 import asyncio
 import random
 
-
 client = commands.Bot(command_prefix = "=")
 
 ### Bot booting ###
