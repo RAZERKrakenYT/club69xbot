@@ -14,20 +14,17 @@ async def on_ready():
     await client.change_presence(activity=discord.Streaming(name="on Twitch - ɾ Λ ʐ Ξ ɾ !!!", url="https://www.twitch.tv/razerezzzpzzzGG"))
     # await client.user.edit(username="CLOUDEX™")
     print("I am on service sir !")
-
     
 ### Member joining ###
 @client.event
 async def on_member_join(member: discord.Member):
     channel = await member.create_dm()
     await channel.send("Welcome to our CLOUDEX™ server!"
-    
                        
 ### Latency ###
 @client.command()
 async def ping(ctx):
     await ctx.send(f"Currently pinging at {round(client.latency*1000)}ms!")
-
                        
 ### Deleting ###
 @client.command()
@@ -38,14 +35,12 @@ async def delete(ctx, amount=1):
     else:
         await ctx.channel.purge(limit=amount+1)
 
-                       
 ### Kick ###
 @client.command()
 @commands.has_role(".")
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
     await ctx.channel.send(f"{member.mention} has been kicked!")
-
                        
 ### Banning ###
 @client.command()
@@ -53,8 +48,7 @@ async def kick(ctx, member : discord.Member, *, reason=None):
 async def ban(ctx, member : discord.Member, *, reason=None):
     await member.ban(reason=reason)
     await ctx.channel.send(f"{member.mention} has been banned!")
-
-                       
+             
 ### Unbanning ###
 @client.command()
 @commands.has_role(".")
@@ -69,13 +63,11 @@ async def unban(ctx, *, member):
             await ctx.send(f"{user.mention} has been unbanned!")
             return
 
-                       
 ### Exception handling ###
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send(f"{ctx.author.mention} Oopppsss! Command not found!")
-                       
 
 ### Echoing ###
 @client.command()
@@ -88,7 +80,6 @@ async def echo(ctx):
         output += word
         output += " "
     await ctx.channel.send(output)
-                       
 
 ### Dm a member ###
 @client.command()
@@ -98,7 +89,6 @@ async def dm(ctx, member: discord.Member, *, content):
     channel = await member.create_dm()
     await channel.send(content)
     await ctx.channel.send(f'"{content}" has been sent to {member}')
-                       
 
 ### User Avatar ###
 @client.command()
@@ -108,7 +98,6 @@ async def avatar(ctx, member: discord.Member):
     embed.set_image(url=member.avatar_url)
     await ctx.send(embed= embed)
     #await ctx.send("{}".format(member.avatar_url))
-                       
 
 ### Random truth ###
 @client.command()
@@ -119,7 +108,6 @@ async def truth(ctx, *, question):
                  "That's impossible!",
                  "Maybe."]
     await ctx.send(f"{ctx.author.mention} {random.choice(responses)}")
-                       
 
 ### Random slang ###
 @client.command()
@@ -142,9 +130,8 @@ async def slang(ctx, member: discord.Member):
                  "Yuck fou!",
                  "Tor hogay amar shona!",]
     await ctx.send(f"{member.mention} {random.choice(responses)}")
-                       
     
-    ### Bot joining a voice channel ###
+### Bot joining a voice channel ###
 @client.command()
 async def join(ctx):
     channel = ctx.message.author.voice.channel
@@ -153,7 +140,6 @@ async def join(ctx):
         await voice.move_to(channel)
     else:
         voice = await channel.connect()
-
 
 ### Bot leaving a voice channel ###
 @client.command()
