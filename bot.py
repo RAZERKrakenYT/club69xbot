@@ -24,7 +24,7 @@ async def on_member_join(member: discord.Member):
     
 ### Autorole ###    
     @client.event
-async def on_member_join(member):
+async def on_member_join(member: discord.Member):
     intents = discord.Intents().all()
     client = commands.Bot(command_prefix = prefix, intents=intents)
     role = discord.utils.get(ctx.guild.roles, name='Community Member______________________________________''BD')
