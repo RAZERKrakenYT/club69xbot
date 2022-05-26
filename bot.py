@@ -11,7 +11,7 @@ client = commands.Bot(command_prefix = "=")
 ### Bot booting ###
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Streaming(name="- on Twitch XEE !!!", url="https://www.twitch.tv/xeeeTV"))
+    await client.change_presence(activity=discord.Streaming(name="- on Twitch xeeeTV !!!", url="https://www.twitch.tv/xeeeTV"))
     # await client.user.edit(username="CLOUDEX™")
     print("I am on service sir !")
 
