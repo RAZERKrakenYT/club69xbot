@@ -19,7 +19,7 @@ async def on_ready():
 @client.event
 async def on_member_join(member: discord.Member):
     channel = await member.create_dm()
-    await channel.send("Welcome to CLOUDEX™ server")
+    await channel.send("Welcome to XEE's server")
 
 ### Member leaving ###
 @client.event
@@ -112,7 +112,7 @@ async def truth(ctx, *, question):
     responses = ["Yes.",
                  "No.",
                  "Definitely.",
-                 "Absolutely.",
+                 "Absolutely Not.",
                  "Maybe."]
     await ctx.send(f"{ctx.author.mention} {random.choice(responses)}")
 
